@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import ThemeToggle from './ThemeToggle';
+import toast from 'react-hot-toast';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,7 +48,11 @@ export default function Navbar() {
           )}
           {session && (
             <button
-              onClick={() => { setMenuOpen(false); signOut(); }}
+              onClick={() => {
+                setMenuOpen(false);
+                toast.success('Logged out successfully!');
+                signOut();
+              }}
               className="text-gray-200 hover:text-blue-400 font-medium transition-colors"
             >
               Logout

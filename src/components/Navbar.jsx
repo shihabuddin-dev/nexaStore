@@ -10,7 +10,6 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { data: session } = useSession();
 
-  console.log(session)
 
   return (
     <nav className="w-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-sm sticky top-0 z-50">
@@ -31,7 +30,7 @@ export default function Navbar() {
           <Link href="/" className="text-gray-200 hover:text-blue-400 font-medium transition-colors" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link href="/products" className="text-gray-200 hover:text-blue-400 font-medium transition-colors" onClick={() => setMenuOpen(false)}>Products</Link>
           {session && (
-            <Link href="/add-product" className="text-gray-200 hover:text-blue-400 font-medium transition-colors" onClick={() => setMenuOpen(false)}>
+            <Link href="/dashboard/add-product" className="text-gray-200 hover:text-blue-400 font-medium transition-colors" onClick={() => setMenuOpen(false)}>
               Add Product
             </Link>
           )}

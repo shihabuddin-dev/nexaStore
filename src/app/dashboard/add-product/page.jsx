@@ -2,6 +2,7 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function AddProductPage() {
   const { data: session, status } = useSession();
@@ -13,7 +14,6 @@ export default function AddProductPage() {
     image: ""
   });
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -31,7 +31,6 @@ export default function AddProductPage() {
   const handleSubmit = async e => {
     e.preventDefault();
     setLoading(true);
-    setSuccess(false);
     const res = await fetch("/api/products", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -39,13 +38,16 @@ export default function AddProductPage() {
     });
     setLoading(false);
     if (res.ok) {
-      setSuccess(true);
       setForm({ name: "", description: "", price: "", image: "" });
+      toast.success("Product added successfully!");
+    } else {
+      toast.error("Failed to add product.");
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-blue-300 px-4">
+      <Toaster position="top-center" />
       <div className="bg-gray-800 rounded-xl shadow-lg p-8 w-full max-w-md flex flex-col items-center">
         <h1 className="text-3xl font-extrabold mb-6 text-blue-300">Add Product</h1>
         <form className="w-full flex flex-col gap-4" onSubmit={handleSubmit}>
@@ -57,7 +59,6 @@ export default function AddProductPage() {
             {loading ? "Adding..." : "Add Product"}
           </button>
         </form>
-        {success && <div className="mt-4 text-green-400">Product added successfully!</div>}
       </div>
     </div>
   );

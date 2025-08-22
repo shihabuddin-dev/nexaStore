@@ -29,14 +29,14 @@ A modern, full-stack e-commerce demo app built with Next.js 15 (App Router), Nex
 	DB_NAME=your_db_name
 	GOOGLE_CLIENT_ID=your_google_client_id
 	GOOGLE_CLIENT_SECRET=your_google_client_secret
-	NEXTAUTH_URL=http://localhost:3000
+	NEXTAUTH_URL=https://nexastore.vercel.app
 	```
 
 4. **Run the development server:**
 	```bash
 	npm run dev
 	```
-	Visit [http://localhost:3000](http://localhost:3000)
+	Visit [https://nexastore.vercel.app](https://nexastore.vercel.app)
 
 ## Route Summary
 
@@ -58,6 +58,12 @@ A modern, full-stack e-commerce demo app built with Next.js 15 (App Router), Nex
 - React Hot Toast
 
 ---
+
+## Developer
+
+- **Name:** Shihab Uddin
+- **Portfolio:** [shihab-dev.web.app](https://shihab-dev.web.app/)
+- **LinkedIn:** [linkedin.com/in/shihab-dev](https://www.linkedin.com/in/shihab-dev/)
 
 Feel free to customize and extend this project for your own needs!
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

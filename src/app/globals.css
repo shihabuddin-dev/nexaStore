@@ -2,18 +2,18 @@
 
 /* Tailwind default theme + CSS variables */
 :root {
-  --background: #ffffff;
+  --background: #171717;
   --foreground: #171717;
 }
 
-.dark {
+/* .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
-}
+} */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* --color-background: var(--background);
+  --color-foreground: var(--foreground); */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

@@ -2,17 +2,17 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="relative w-full flex flex-col items-center justify-center py-20 px-4 bg-gradient-to-br from-blue-100 via-white to-blue-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-500 overflow-hidden">
+  <section className="relative w-full flex flex-col items-center justify-center py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 transition-colors duration-500 overflow-hidden">
       <div className="max-w-3xl text-center z-10">
-        <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-blue-700 dark:text-blue-300 drop-shadow-lg">
-          Welcome to <span className="text-blue-500 dark:text-blue-400">nexaStore</span>
+        <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-blue-300 drop-shadow-lg">
+          Welcome to <span className="text-blue-400">nexaStore</span>
         </h1>
-        <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-200 mb-8 font-medium">
+        <p className="text-lg sm:text-xl text-gray-200 mb-8 font-medium">
           Discover the best products, unbeatable prices, and a seamless shopping experience.
         </p>
         <a
           href="/products"
-          className="inline-block px-4 md:px-8 py-2 md:py-3 rounded-lg bg-blue-600 text-white dark:bg-blue-500 dark:text-gray-900 font-semibold shadow-lg hover:bg-blue-700 dark:hover:bg-blue-400 transition-colors md:text-lg"
+          className="inline-block px-4 md:px-8 py-2 md:py-3 rounded-lg bg-blue-500 text-gray-900 font-semibold shadow-lg hover:bg-blue-400 transition-colors md:text-lg"
         >
           Browse Products
         </a>

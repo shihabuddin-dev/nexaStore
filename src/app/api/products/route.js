@@ -27,6 +27,7 @@ export async function POST(req) {
       description: body.description,
       price: body.price,
       image: body.image,
+      user: body.user || null,
       createdAt: new Date()
     });
     return NextResponse.json({ success: true, id: result.insertedId });

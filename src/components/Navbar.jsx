@@ -2,13 +2,15 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { FiMenu } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { data: session } = useSession();
+
+  console.log(session?.user)
 
 
   return (
@@ -21,10 +23,14 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle Menu"
         >
-          <FiMenu className="h-6 w-6" />
+          {menuOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
         </button>
         {/* Menu */}
-        <div className={`flex-col sm:flex-row flex items-center gap-4 sm:gap-6 w-full sm:w-auto justify-end bg-gray-900 sm:bg-transparent absolute sm:static left-0 top-16 sm:top-auto z-40 transition-all duration-200 ${menuOpen ? 'flex' : 'hidden'} sm:flex p-6 sm:p-0 shadow sm:shadow-none`}
+        <div
+          className={`flex-col sm:flex-row flex items-center gap-4 sm:gap-6 w-full sm:w-auto justify-end bg-gray-900 sm:bg-transparent absolute sm:static left-0 top-16 sm:top-auto z-40 p-6 sm:p-0 shadow sm:shadow-none
+            transition-all duration-300 ease-in-out
+            ${menuOpen ? 'opacity-100 pointer-events-auto scale-100 flex' : 'opacity-0 pointer-events-none scale-95 hidden'}
+            sm:opacity-100 sm:pointer-events-auto sm:scale-100 sm:flex`}
           style={{ minWidth: menuOpen ? '100vw' : undefined }}
         >
           <Link href="/" className="text-gray-200 hover:text-blue-400 font-medium transition-colors" onClick={() => setMenuOpen(false)}>Home</Link>

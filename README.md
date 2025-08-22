@@ -25,7 +25,7 @@ A modern, full-stack e-commerce demo app built with Next.js 15 (App Router), Nex
 3. **Configure environment variables:**
 	Create a `.env.local` file in the root with the following:
 	```env
-	MONGODB_URI=your_mongodb_atlas_uri
+	NEXT_PUBLIC_MONGODB_URI=your_mongodb_atlas_uri
 	DB_NAME=your_db_name
 	GOOGLE_CLIENT_ID=your_google_client_id
 	GOOGLE_CLIENT_SECRET=your_google_client_secret

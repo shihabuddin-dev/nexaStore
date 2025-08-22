@@ -12,7 +12,7 @@ export default function Hero() {
         </p>
         <a
           href="/products"
-          className="inline-block px-4 md:px-8 py-2 md:py-3 rounded-lg bg-blue-500 text-gray-900 font-semibold shadow-lg hover:bg-blue-400 transition-colors md:text-lg"
+          className="inline-block px-4 md:px-8 py-2 rounded-lg bg-blue-500 text-gray-900 font-semibold shadow-lg hover:bg-blue-400 transition-colors md:text-lg"
         >
           Browse Products
         </a>

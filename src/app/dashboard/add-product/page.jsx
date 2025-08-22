@@ -34,7 +34,14 @@ export default function AddProductPage() {
     const res = await fetch("/api/products", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form)
+      body: JSON.stringify({
+        ...form,
+        user: session?.user ? {
+          name: session.user.name,
+          email: session.user.email,
+          image: session.user.image
+        } : undefined
+      })
     });
     setLoading(false);
     if (res.ok) {
@@ -53,7 +60,7 @@ export default function AddProductPage() {
         <form className="w-full flex flex-col gap-4" onSubmit={handleSubmit}>
           <input name="name" value={form.name} onChange={handleChange} placeholder="Product Name" required className="w-full px-4 py-2 rounded bg-gray-900 text-blue-200 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
           <textarea name="description" value={form.description} onChange={handleChange} placeholder="Description" required className="w-full px-4 py-2 rounded bg-gray-900 text-blue-200 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <input name="price" value={form.price} onChange={handleChange} placeholder="Price" required className="w-full px-4 py-2 rounded bg-gray-900 text-blue-200 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="number" name="price" value={form.price} onChange={handleChange} placeholder="Price" required className="w-full px-4 py-2 rounded bg-gray-900 text-blue-200 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
           <input name="image" value={form.image} onChange={handleChange} placeholder="Image URL" required className="w-full px-4 py-2 rounded bg-gray-900 text-blue-200 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" />
           <button type="submit" disabled={loading} className="w-full py-2 rounded bg-blue-500 text-gray-900 font-bold hover:bg-blue-400 transition-colors">
             {loading ? "Adding..." : "Add Product"}

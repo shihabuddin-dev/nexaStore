@@ -1,5 +1,5 @@
 'use client'
-import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 
 export default function Footer() {
@@ -24,14 +24,14 @@ export default function Footer() {
         </div>
         {/* Social Icons */}
         <div className="flex gap-4 items-center mt-4 md:mt-0">
-          <a href="#" aria-label="Facebook" className="p-2 rounded-full bg-blue-500 hover:bg-blue-400 transition-colors">
+          <a href="https://www.facebook.com/shihabuddinReal/" aria-label="Facebook" className="p-2 rounded-full bg-blue-500 hover:bg-blue-400 transition-colors">
             <FaFacebookF className="w-4 h-4 text-gray-900" />
           </a>
-          <a href="#" aria-label="Twitter" className="p-2 rounded-full bg-blue-500 hover:bg-blue-400 transition-colors">
-            <FaTwitter className="w-4 h-4 text-gray-900" />
+          <a href="https://www.linkedin.com/in/shihab-dev" aria-label="Instagram" className="p-2 rounded-full bg-blue-500 hover:bg-blue-400 transition-colors">
+            <FaLinkedin className="w-4 h-4 text-gray-900" />
           </a>
-          <a href="#" aria-label="Instagram" className="p-2 rounded-full bg-blue-500 hover:bg-blue-400 transition-colors">
-            <FaInstagram className="w-4 h-4 text-gray-900" />
+          <a href="https://x.com/shihab_dev" aria-label="Twitter" className="p-2 rounded-full bg-blue-500 hover:bg-blue-400 transition-colors">
+            <FaTwitter className="w-4 h-4 text-gray-900" />
           </a>
         </div>
       </div>

@@ -1,14 +1,19 @@
 "use client"
+
 import Link from 'next/link';
 import { useState } from 'react';
 import { FiMenu } from 'react-icons/fi';
+import { useSession, signIn, signOut } from 'next-auth/react';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { data: session } = useSession();
+
+  console.log(session)
 
   return (
-  <nav className="w-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-sm sticky top-0 z-50">
+    <nav className="w-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
         <Link href="/" className="text-2xl font-extrabold tracking-tight text-blue-300 hover:text-white transition-colors">NexaStore</Link>
         {/* Hamburger button */}
@@ -25,7 +30,24 @@ export default function Navbar() {
         >
           <Link href="/" className="text-gray-200 hover:text-blue-400 font-medium transition-colors" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link href="/products" className="text-gray-200 hover:text-blue-400 font-medium transition-colors" onClick={() => setMenuOpen(false)}>Products</Link>
-          <Link href="/login" className="text-gray-200 hover:text-blue-400 font-medium transition-colors" onClick={() => setMenuOpen(false)}>Login</Link>
+          {session && (
+            <Link href="/add-product" className="text-gray-200 hover:text-blue-400 font-medium transition-colors" onClick={() => setMenuOpen(false)}>
+              Add Product
+            </Link>
+          )}
+          {!session && (
+            <Link href="/login" className="text-gray-200 hover:text-blue-400 font-medium transition-colors" onClick={() => setMenuOpen(false)}>
+              Login
+            </Link>
+          )}
+          {session && (
+            <button
+              onClick={() => { setMenuOpen(false); signOut(); }}
+              className="text-gray-200 hover:text-blue-400 font-medium transition-colors"
+            >
+              Logout
+            </button>
+          )}
           <ThemeToggle />
         </div>
       </div>

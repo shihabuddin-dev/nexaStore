@@ -1,13 +1,9 @@
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className="font-sans">
-      <Navbar />
+    <div className="font-sans pb-18">
       <Hero />
-      <Footer />
     </div>
   );
 }

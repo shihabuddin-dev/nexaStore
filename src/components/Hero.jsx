@@ -19,7 +19,7 @@ export default function Hero() {
        
       </div>
       <div className="absolute left-0 bottom-0 w-full pointer-events-none z-0">
-        <svg className="w-full h-32 sm:h-48 md:h-56 lg:h-64 xl:h-72" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full sm:h-48 md:h-56 lg:h-64 xl:h-72" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill="url(#hero-gradient)" fillOpacity="0.3" d="M0,160L80,170.7C160,181,320,203,480,197.3C640,192,800,160,960,154.7C1120,149,1280,171,1360,181.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z" />
           <defs>
             <linearGradient id="hero-gradient" x1="0" y1="0" x2="1" y2="1">
